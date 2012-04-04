@@ -1,6 +1,6 @@
 cabal-version:       >= 1.2
 build-type:          Simple
-name:                core-to-isabelle
+name:                halicore
 version:             0.0
 synopsis:            Translator from GHC Core to Isabelle/HOLCF
 category:            Math
