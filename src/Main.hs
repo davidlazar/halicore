@@ -4,13 +4,13 @@ import System.Environment
 
 import GHC
 import Outputable
-import DynFlags ( defaultDynFlags )
+import DynFlags ( defaultLogAction )
 import GHC.Paths ( libdir )
 
 
 processModule :: String -> IO ()
 processModule filename =
-  defaultErrorHandler defaultDynFlags $ do
+  defaultErrorHandler defaultLogAction $ do
     coreMod <- runGhc (Just libdir) $ do
       dflags <- getSessionDynFlags
       setSessionDynFlags dflags
