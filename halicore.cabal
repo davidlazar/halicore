@@ -8,27 +8,22 @@ license:             BSD3
 --author:
 --maintainer:
 
-executable core-to-isabelle
+executable halicore
     hs-source-dirs:      src
-    main-is:             Main.hs
-    ghc-options:         -Wall -fno-warn-orphans -fwarn-tabs
+    main-is:             Halicore.hs
+    ghc-options:         -Wall -fwarn-tabs
     if os(darwin)
        ghc-options:      -optl-Wl,-dead_strip
     ghc-prof-options:    -auto-all
     build-depends:       base > 4,
                          ghc >= 6.12 && < 8,
                          ghc-paths,
-                         process
-
-executable hcr2thy
-    hs-source-dirs:      src
-    main-is:             Hcr2Thy.hs
-    if os(darwin)
-       ghc-options:      -optl-Wl,-dead_strip
-    ghc-options:         -Wall
-    build-depends:       extcore == 1.0.*,
+                         process,
                          filepath,
+                         directory,
+                         temporary,
                          bytestring == 0.9.*,
                          text == 0.11.*,
                          wl-pprint-text == 1.0.*,
-                         zenc == 0.1.*
+                         zenc == 0.1.*,
+                         extcore == 1.0.*
